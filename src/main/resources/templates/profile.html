@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>个人中心</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/community.css">
+    <link rel="stylesheet" href="/css/page.css">
+    <script src="/jquery/jquery-2.1.1.min.js"></script>
+    <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+</head>
+<body>
+<div th:replace="navigation :: nav"></div>
+<div class="container-fluid main profile">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <h2><span id="title"></span></h2>
+            <hr/>
+            <div class="questionList">
+
+            </div>
+            <div id="pagination1" class="page fl"></div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <div class="list-group section">
+                <a id="myQuestion" class="list-group-item">我的问题</a>
+                <a id="myReply" class="list-group-item">
+                    最新回复
+                    <span class="badge"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="footer :: foot"></div>
+</body>
+<script src="/jquery/layer/layer.js"></script>
+<script src="/js/page.js"></script>
+<script src="/js/profile.js"></script>
+</html>

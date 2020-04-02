@@ -1,0 +1,86 @@
+body{
+    background-color: #efefef;
+}
+.main{
+    margin: 30px;
+    background-color: white;
+}
+.btn-publish{
+    float: right;
+    margin-bottom: 20px;
+}
+.media-object{
+    width: 39px;
+    height: 39px;
+}
+.media-body{
+    padding-top: 10px;
+}
+.text{
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+}
+.profile .section{
+    margin-top: 20px;
+}
+.list-group a{
+    cursor: default;
+}
+.community-menu{
+    color: #999;
+    font-size: 13px;
+}
+.jumbotron{
+    margin: 100px 550px;
+}
+.comment{
+    margin: 10px 0px;
+}
+.comments{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+#comment{
+    margin-top: 25px;
+}
+.menu{
+    color: #999;
+    margin-top: 5px;
+}
+.menu .icon{
+    margin-right: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.menu .active{
+    color: #499ef3;
+}
+.menu .icon:hover{
+    color: #499ef3;
+}
+.well{
+    padding-bottom: 60px;
+}
+#replyBtn{
+    margin-top: 13px;
+}
+#related{
+    padding-left: 0;
+    line-height: 28px;
+    list-style: none;
+}
+#select-tag{
+    display: none;
+}
+.tab-content div{
+    padding-top: 10px;
+}
+.tab-content .label-info{
+    margin-right: 7px;
+    white-space: normal;
+}
+.footer{
+    padding: 10px 30%;
+    color: #666;
+}

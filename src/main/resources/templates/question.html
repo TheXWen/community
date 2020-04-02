@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>个人中心</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/community.css">
+    <link rel="stylesheet" href="/css/editormd.preview.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="/jquery/jquery-2.1.1.min.js"></script>
+    <script src="/js/editormd.min.js"></script>
+    <script src="/js/lib/marked.min.js"></script>
+    <script src="/js/lib/prettify.min.js"></script>
+    <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+</head>
+<body>
+<div th:replace="navigation :: nav"></div>
+<div class="container-fluid main profile">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <h3><span id="title"></span></h3>
+            <div class="question">
+            </div>
+            <hr/>
+            <!-- 正文 -->
+            <div id="question-view" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <textarea id="description" style="display:none;"></textarea>
+            </div>
+            <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12"/>
+            <span id="tags"></span>
+            <hr/>
+            <!-- 编辑 -->
+            <span id="edit">
+            </span>
+            <hr/>
+            <!-- 回复内容 -->
+            <h4 id="replyCount"></h4>
+            <hr/>
+            <div id="replyContent">
+            </div>
+            <!-- 回复输入框 -->
+            <div id="comment">
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4>发起人</h4>
+                <div id="userInfo"></div>
+                <hr/>
+            </div>
+            <!-- 友情链接 -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4>友情链接</h4>
+                <a href="https://github.com/TheXWen" class="fa fa-github" target="_blank">Github</a>&emsp;
+                <a href="https://thexwen.github.io" class="fa fa-link" target="_blank">Blog</a>
+                <hr/>
+            </div>
+            <!-- 相关问题 -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4>相关问题</h4>
+                <div>
+                    <ul id="related"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="footer :: foot"></div>
+</body>
+<script src="/jquery/layer/layer.js"></script>
+<script src="/js/Question.js"></script>
+<script src="/js/Related.js"></script>
+</html>

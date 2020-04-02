@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="copy">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">社区</span>
+                </button>
+                <a class="navbar-brand" href="/">社区</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input id="queryText" type="text" class="form-control" placeholder="搜索问题">
+                    </div>
+                    <a id="queryBtn" class="btn btn-default">搜索</a>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li th:if="${session.user == null}">
+                        <a href="https://gitee.com/oauth/authorize?client_id=ca483c3931e1e8f8585ee36e54d91b079af8ee92e1deedeb19368f08e7354680&redirect_uri=http://localhost:8080/callback&response_type=code">登录</a><!--https://github.com/login/oauth/authorize?client_id=2d4251139a113a353a0a&redirect_uri=http://localhost:8080/callback&scope=user&state=1-->
+                    </li>
+                    <li th:if="${session.user != null}"><a href="/publish">提问</a></li>
+                    <li th:if="${session.user != null}">
+                        <a href="/profile/questions">通知<span class="badge"></span></a>
+                    </li>
+                    <li class="dropdown" th:if="${session.user != null}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span th:text="${session.user.getName()}"></span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/profile/questions">我的问题</a></li>
+                            <li><a href="/logout">退出登录</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

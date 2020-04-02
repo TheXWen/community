@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>发布 - 社区</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/community.css">
+    <link rel="stylesheet" href="/css/editormd.min.css">
+</head>
+<body>
+<div th:replace="navigation :: nav"></div>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <h2><span class="glyphicon glyphicon-plus" aria-hidden="true">发起</span></h2>
+            <hr/>
+            <form>
+                <div class="form-group">
+                    <label for="title">问题标题:</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="问题标题...">
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group description" id="question-editor">
+                    <textarea name="description" id="description" class="form-control" rows="10" style="display: none;"></textarea>
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label for="title">添加标签:</label>
+                    <input type="text" class="form-control" id="tag" name="tag"
+                           onclick="showSelectTag()" autocomplete="off" placeholder="输入标签，以,隔开">
+                    <span class="help-block"></span>
+                    <div id="select-tag">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#language" aria-controls="language" role="tab" data-toggle="tab" onclick="selectTags(1,'language')">开发语言</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#framework" aria-controls="framework" role="tab" data-toggle="tab" onclick="selectTags(2, 'framework')">平台框架</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#server" aria-controls="messages" role="tab" data-toggle="tab" onclick="selectTags(3, 'server')">服务器</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#database" aria-controls="database" role="tab" data-toggle="tab" onclick="selectTags(4, 'database')">数据库</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#tool" aria-controls="tool" role="tab" data-toggle="tab" onclick="selectTags(5, 'tool')">开发工具</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="language"></div>
+                            <div role="tabpanel" class="tab-pane" id="framework"></div>
+                            <div role="tabpanel" class="tab-pane" id="server"></div>
+                            <div role="tabpanel" class="tab-pane" id="database"></div>
+                            <div role="tabpanel" class="tab-pane" id="tool"></div>
+                        </div>
+                    </div>
+                </div>
+                <button id="releaseBtn" type="button" class="btn btn-success btn-publish">发布</button>
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <h2>问题发起指南</h2>
+            • 问题标题: 请用精简的语言描述您发布的问题，不超过25字<br>
+            • 问题补充: 详细补充您的问题内容，并确保问题描述清晰直观, 并提供一些相关的资料<br>
+            • 选择标签: 选择一个或者多个合适的标签，用逗号隔开，每个标签不超过10个字
+        </div>
+    </div>
+</div>
+<div th:replace="footer :: foot"></div>
+<script src="/jquery/jquery-2.1.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/editormd.min.js"></script>
+<script src="/jquery/layer/layer.js"></script>
+<script type="text/javascript" src="/js/publish.js"></script>
+</body>
+</html>
